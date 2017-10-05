@@ -1,10 +1,15 @@
 package com.ironyard.springyard.controller;
 
+import com.ironyard.springyard.model.Customer;
 import com.ironyard.springyard.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Controller
 public class CustomerController {
@@ -22,8 +27,27 @@ public class CustomerController {
         return "add-customer";
     }
 
+    @RequestMapping(path = "/add-customer", method = RequestMethod.POST)
+        public String createCustomer (@RequestParam(value="firstName") String firstName,
+            @RequestParam(value="lastName") String lastName,
+            @RequestParam(value="phone") String phone,
+            @RequestParam(value="email") String email,
+            Model model) {
+        Customer customer = new Customer();
+        customer.setFirstName(firstName);
+        customer.setLastName(lastName);
+        customer.setPhone(phone);
+        customer.setEmail(email);
+        customerService.add(customer);
+        List<Customer> customersList = customerService.get();
+        model.addAttribute("customers", customersList);
+        return "redirect:view-customers";
+    }
+
     @RequestMapping(path = "/view-customers", method = RequestMethod.GET)
-    public String customers () {
+    public String customers (Model model) {
+        List<Customer> customersList = customerService.get();
+        model.addAttribute("customers", customersList);
         return "view-customers";
     }
 }

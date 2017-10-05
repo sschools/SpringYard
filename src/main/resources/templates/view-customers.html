@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
     <title>Customers</title>
 </head>
 <body>
     <h1>Customers</h1>
+    <div th:each="customer : ${customers}">
+        <p>Id: <span th:text="${customer.id}"></span>
+            <span> First Name: </span><span th:text="${customer.firstName}"></span>
+            <span> Last Name: </span><span th:text="${customer.lastName}"></span></p>
+    </div>
 </body>
 </html>
