@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Single Customer</title>
+</head>
+<body>
+<h1>Profile for Customer Number: <span th:text="${customer.getId()} "></span></h1>
+    <p> First Name: <span th:text="${customer.getFirstName()}"></span></p>
+    <p> Last Name: <span th:text="${customer.getLastName()}"></span></p>
+    <p> Phone: <span th:text="${customer.getPhone()}"></span></p>
+    <p> Email: <span th:text="${customer.getEmail()}"></span></p>
+</body>
+</html>
