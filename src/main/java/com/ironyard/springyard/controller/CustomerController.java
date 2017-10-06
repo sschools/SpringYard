@@ -52,6 +52,13 @@ public class CustomerController {
         return "redirect:view-customers";
     }
 
+    @RequestMapping(path = "/view-one/{id}", method= RequestMethod.POST)
+        public String goBack (Model model) {
+        List<Customer> customersList = customerService.get();
+        model.addAttribute("customers", customersList);
+        return "redirect:/view-customers";
+    }
+
     @RequestMapping(path = "/view-customers", method = RequestMethod.GET)
     public String customers (Model model) {
         List<Customer> customersList = customerService.get();

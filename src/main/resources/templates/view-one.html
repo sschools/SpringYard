@@ -9,6 +9,9 @@
     <p> First Name: <span th:text="${customer.getFirstName()}"></span></p>
     <p> Last Name: <span th:text="${customer.getLastName()}"></span></p>
     <p> Phone: <span th:text="${customer.getPhone()}"></span></p>
-    <p> Email: <span th:text="${customer.getEmail()}"></span></p>
+    <p> Email: <span th:text="${customer.getEmail()}"></span></p><br/>
+    <form th:action="@{'/view-one/'+ ${customer.getId()}}" method="post">
+        <button type="submit">Back To Customers Page</button>
+    </form>
 </body>
 </html>
