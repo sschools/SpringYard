@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Single Customer</title>
+    <link href="/styles.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="viewOneBody">
 <h1>Profile for Customer Number: <span th:text="${customer.getId()} "></span></h1>
     <p> First Name: <span th:text="${customer.getFirstName()}"></span></p>
     <p> Last Name: <span th:text="${customer.getLastName()}"></span></p>
     <p> Phone: <span th:text="${customer.getPhone()}"></span></p>
     <p> Email: <span th:text="${customer.getEmail()}"></span></p><br/>
     <form th:action="@{'/view-one/'+ ${customer.getId()}}" method="post">
-        <button type="submit">Back To Customers Page</button>
+        <button type="submit" class="coolButton">Back To Customers Page</button>
     </form>
 </body>
 </html>

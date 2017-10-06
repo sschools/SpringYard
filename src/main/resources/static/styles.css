@@ -1,0 +1,59 @@
+body {
+    background-color: aliceblue;
+}
+
+h1 {
+    color: darkslateblue;
+    text-align: center;
+}
+
+table {
+    border: 1px solid black;
+}
+
+td {
+    padding: 2px 10px;
+    margin: 2px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+.coolButton {
+    width: 200px;
+    height:30px;
+    background-color: floralwhite;
+    color: darkslateblue;
+    border: 1px solid darkslateblue;
+    border-radius: 5px;
+}
+
+.coolButton:hover {
+    background-color: darkslateblue;
+    color:  floralwhite;
+}
+
+input {
+    width: 200px;
+    height: 30px;
+    background-color: floralwhite;
+    color: darkslateblue;
+    margin: 5px 0;
+}
+
+.viewOneBody p {
+    color: darkred;
+}
+
+.viewOneBody span {
+    color: darkslateblue;
+}
