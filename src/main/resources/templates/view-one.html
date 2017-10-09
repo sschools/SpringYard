@@ -14,5 +14,9 @@
     <form th:action="@{'/view-one/'+ ${customer.getId()}}" method="post">
         <button type="submit" class="coolButton">Back To Customers Page</button>
     </form>
+    <br/>
+    <form action="/view-one" method="post">
+        <button type="submit" class="coolButton" name="id" th:value="${customer.getId()}">Delete This Customer</button>
+    </form>
 </body>
 </html>

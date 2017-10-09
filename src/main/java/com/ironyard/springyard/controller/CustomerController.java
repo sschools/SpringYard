@@ -59,6 +59,12 @@ public class CustomerController {
         return "redirect:/view-customers";
     }
 
+    @RequestMapping(path = "/view-one", method = RequestMethod.POST)
+        public String deleteOne (@RequestParam(value="id") int id) {
+        customerService.delete(id);
+        return "redirect:view-customers";
+    }
+
     @RequestMapping(path = "/view-customers", method = RequestMethod.GET)
     public String customers (Model model) {
         List<Customer> customersList = customerService.get();
