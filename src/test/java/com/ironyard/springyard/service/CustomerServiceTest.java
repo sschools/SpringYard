@@ -31,9 +31,9 @@ public class CustomerServiceTest {
         cust1.setLastName(lastName);
         cust1.setPhone(phone);
         cust1.setEmail(email);
-        customerRepository.add(cust1);
+        customerRepository.save(cust1);
 
-        List<Customer> customers = customerRepository.get();
+        List<Customer> customers = customerRepository.findAll();
 
         Customer cust2 = null;
 
@@ -45,7 +45,7 @@ public class CustomerServiceTest {
 
         Assert.assertNotNull(cust2);
 
-        Customer cust3 = customerRepository.getById(cust2.getId());
+        Customer cust3 = customerRepository.findOne(cust2.getId());
         Assert.assertNotNull(cust3);
         Assert.assertEquals(firstName, cust3.getFirstName());
         Assert.assertEquals(lastName, cust3.getLastName());
@@ -63,9 +63,9 @@ public class CustomerServiceTest {
         cust1.setLastName(lastName);
         cust1.setPhone(phone);
         cust1.setEmail(email);
-        customerRepository.add(cust1);
+        customerRepository.save(cust1);
 
-        List<Customer> customers = customerRepository.get();
+        List<Customer> customers = customerRepository.findAll();
 
         Customer cust2 = null;
         for (Customer c : customers) {
@@ -80,9 +80,9 @@ public class CustomerServiceTest {
 
         cust2.setFirstName(updateFirstName);
         cust2.setLastName(updateLastName);
-        customerRepository.update(cust2);
+        customerRepository.save(cust2);
 
-        customers = customerRepository.get();
+        customers = customerRepository.findAll();
 
         Customer cust3 = null;
         for (Customer c : customers) {
@@ -107,9 +107,9 @@ public class CustomerServiceTest {
         cust1.setLastName(lastName);
         cust1.setPhone(phone);
         cust1.setEmail(email);
-        customerRepository.add(cust1);
+        customerRepository.save(cust1);
 
-        List<Customer> customers = customerRepository.get();
+        List<Customer> customers = customerRepository.findAll();
 
         Customer cust2 = null;
         for (Customer c : customers) {
@@ -121,7 +121,7 @@ public class CustomerServiceTest {
 
         customerRepository.delete(cust2.getId());
 
-        customers = customerRepository.get();
+        customers = customerRepository.findAll();
 
         Customer cust3 = null;
         for (Customer c : customers) {
