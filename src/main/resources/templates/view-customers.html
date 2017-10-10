@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
     <title>Customers Page</title>
@@ -23,5 +23,11 @@
             </tr>
         </tbody>
     </table>
+    <div sec:authorize="isAuthenticated()">
+        <form th:action="@{/logout}" method="post">
+            <input class="signout" type="submit" value="Sign Out"/>
+        </form>
+    </div>
+    <a sec:authorize="hasRole('ROLE_ADMIN')" href="/administrators"><button class="coolButton">Admins Only</button></a>
 </body>
 </html>

@@ -28,7 +28,7 @@ a:hover {
     color: blueviolet;
 }
 
-.coolButton {
+.coolButton, .signout {
     width: 200px;
     height:30px;
     background-color: floralwhite;
@@ -37,7 +37,7 @@ a:hover {
     border-radius: 5px;
 }
 
-.coolButton:hover {
+.coolButton:hover, .signout:hover {
     background-color: darkslateblue;
     color:  floralwhite;
 }

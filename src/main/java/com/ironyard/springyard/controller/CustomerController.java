@@ -71,4 +71,19 @@ public class CustomerController {
         model.addAttribute("customers", customersList);
         return "view-customers";
     }
+
+    @RequestMapping(path = "/login", method = RequestMethod.GET)
+    public String logIn () {
+        return "login";
+    }
+
+    @RequestMapping(path = "/loggedout", method = RequestMethod.GET)
+    public String imOut () {
+        return "redirect:/";
+    }
+
+    @RequestMapping(path = "/administrators", method = RequestMethod.GET)
+    public String adminPage () {
+        return "administrators";
+    }
 }

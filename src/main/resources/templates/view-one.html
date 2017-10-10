@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8"/>
     <title>Single Customer</title>
@@ -18,5 +18,10 @@
     <form action="/view-one" method="post">
         <button type="submit" class="coolButton" name="id" th:value="${customer.getId()}">Delete This Customer</button>
     </form>
+    <div sec:authorize="isAuthenticated()">
+        <form th:action="@{/logout}" method="post">
+            <input class="signout" type="submit" value="Sign Out"/>
+        </form>
+    </div>
 </body>
 </html>
